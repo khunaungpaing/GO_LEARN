@@ -1,1 +1,1 @@
-# This repo is collections of GO exercises
+# Collections of GO exercises
