@@ -4,10 +4,11 @@ import (
 	"fmt"
 
 	lvl1 "github.com/khunaungpaing/GO_LEARN/level-one"
+	lvl2 "github.com/khunaungpaing/GO_LEARN/level-two"
 )
 
 /* _______________________
-*    GO LEVEL 1 EXERCISE
+*    GO LEVEL 1 EXERCISES
 *  _______________________
  */
 func LevelOne() {
@@ -97,14 +98,20 @@ func LevelOne() {
 }
 
 /* _______________________
-*    GO LEVEL 2 EXERCISE
+*    GO LEVEL 2 EXERCISES
 *  _______________________
  */
 func LevelTwo() {
+	// Atomic
+	fmt.Println("\n\nAtomic IN GO\n=================")
+	lvl2.AtomicInGo()
 
+	// Channel
+	fmt.Println("\n\nChannel IN GO\n=================")
+	lvl2.ChannelInGo()
 }
 
 func main() {
-	LevelOne()
+	// LevelOne()
 	LevelTwo()
 }
