@@ -111,8 +111,53 @@ func LevelTwo() {
 	lvl2.ChannelInGo()
 }
 
-
 func main() {
 	// LevelOne()
-	LevelTwo()
+	// LevelTwo()
+
+	done := make(chan bool)
+	defer close(done)
+
+	// Generates a channel sending integers
+	// From 0 to 9
+	range10 := rangeChannel(done, 10)
+
+	for num := range takeFirstN(done, range10, 2) {
+		fmt.Println(num)
+	}
+}
+
+func rangeChannel(done <-chan bool, n int) <-chan int {
+	nums := make(chan int)
+	go func() {
+		for i := 1; i <= 10; i++ {
+			nums <- i
+		}
+	}()
+
+	return nums
+}
+
+func takeFirstN(done <-chan bool, dataSource <-chan int, n int) <-chan int {
+	// 1
+	takeChannel := make(chan int)
+
+	// 2
+	go func() {
+		defer close(takeChannel)
+
+		// 3
+		for i := 0; i < n; i++ {
+			select {
+			case val, ok := <-dataSource:
+				if !ok {
+					return
+				}
+				takeChannel <- val
+			case <-done:
+				return
+			}
+		}
+	}()
+	return takeChannel
 }

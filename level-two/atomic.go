@@ -82,3 +82,4 @@ func customTypeUsingAtomicValue() string {
 
 	return av.Load().(SuperHero).Name
 }
+
