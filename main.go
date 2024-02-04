@@ -112,6 +112,19 @@ func LevelTwo() {
 
 	fmt.Println("\n\nChannel IN GO\n=================")
 	lvl2.ChannelBuffer()
+
+	fmt.Println("\n\nErrors IN GO\n=================")
+	lvl2.ErrorInGo()
+
+	fmt.Println("\n\nGoroutines IN GO\n=================")
+	lvl2.GoRoutines()
+
+	fmt.Println("\n\nChannel Synchronization IN GO\n=================")
+	lvl2.ChannelSynchronizationInGo()
+
+	fmt.Println("\n\nChannel Direction IN GO\n==============================")
+	lvl2.ChannelDirectionInGo()
+
 }
 
 func main() {

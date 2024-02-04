@@ -3,20 +3,22 @@ package leveltwo
 import "fmt"
 
 func ChannelBuffer() {
-	bufch := make(chan int, 3)
+	// Creating a buffered channel with a capacity of 3
+	bufferedChannel := make(chan int, 3)
 
-	bufch <- 1
-	bufch <- 2
-	bufch <- 3
-	go func() {
-		for i := 0; i < 3; i++ {
-			select {
-			case <-bufch:
-			case v := <-bufch:
-				fmt.Println(v)
-			}
+	// Sending values to the buffered channel
+	bufferedChannel <- 1
+	bufferedChannel <- 2
+	bufferedChannel <- 3
 
-		}
+	// Uncommenting the line below would result in a runtime error
+	// bufferedChannel <- 4 // channel is full
 
-	}()
+	// Receiving values from the buffered channel
+	fmt.Println(<-bufferedChannel)
+	fmt.Println(<-bufferedChannel)
+	fmt.Println(<-bufferedChannel)
+
+	// Uncommenting the line below would result in a runtime error
+	// fmt.Println(<-bufferedChannel) // channel is empty
 }
