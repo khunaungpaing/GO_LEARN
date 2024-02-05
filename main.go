@@ -164,8 +164,23 @@ func LevelTwo() {
 	// fmt.Println("\n\nSorting IN GO\n=================")
 	// lvl2.SortingInGo()
 
-	fmt.Println("\n\nCustom Sorting IN GO\n=================")
-	lvl2.CustomSorting()
+	// fmt.Println("\n\nCustom Sorting IN GO\n=================")
+	// lvl2.CustomSorting()
+
+	// fmt.Println("\n\nPanicRecoverDefer IN GO\n=================")
+	// lvl2.PanicRecoverDefer()
+
+	// fmt.Println("\n\nManipulateStrings IN GO\n=================")
+	// lvl2.ManipulateStrings()
+
+	// fmt.Println("\n\nFormatStrings IN GO\n=================")
+	// lvl2.FormatStrings()
+
+	// fmt.Println("\n\nTextTemplate IN GO\n=================")
+	// lvl2.TextTemplate()
+
+	fmt.Println("\n\nReguar Expression IN GO\n=================")
+	lvl2.RegularExpressionInGo()
 }
 
 func main() {
